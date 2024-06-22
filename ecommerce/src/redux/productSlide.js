@@ -1,44 +1,4 @@
-// import {createSlice} from "@reduxjs/toolkit";
-// const initialState={
-//     productList:[]
-// }
-// export const productSlice =createSlice({
-//     name:"product",
-//     initialState,
-//     reducers:{
-//         setDataProduct:(state,action)=>{
-//             console.log(action)
-//             state.productList=  state=[...action.payload]
-       
-//         }
-//     }
-// })
-// export const {setDataProduct}=productSlice.actions
-// export default productSlice.reducer
-// import { createSlice } from "@reduxjs/toolkit";
-
-// const initialState = {
-//     productList: []
-// };
-
-// export const productSlice = createSlice({
-//     name: "product",
-//     initialState,
-//     reducers: {
-//         setDataProduct: (state, action) => {
-//             console.log(action);
-//             state.productList = action.payload; // Update state directly
-//         },
-//         addCartItem: (state, action) => {
-//             // Add logic for adding item to cart if needed
-//         }
-//     }
-// });
-
-// // Export action creators
-// export const { setDataProduct, addCartItem } = productSlice.actions;
-
-// export default productSlice.reducer;
+ 
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-hot-toast";
 
@@ -51,6 +11,7 @@ export const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
+    
     setDataProduct: (state, action) => {
       state.productList = [...action.payload];
     },
@@ -109,3 +70,4 @@ export const {
 } = productSlice.actions;
 
 export default productSlice.reducer;
+

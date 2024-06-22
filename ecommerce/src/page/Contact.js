@@ -15,14 +15,13 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Check if all required fields are filled
     if (!formData.name || !formData.email || !formData.message) {
       setErrorMessage('Please fill in all required fields.');
+      setSuccessMessage('');  // Clear success message on error
       return;
     }
-    // Add your form submission logic here, for example:
     try {
-      const response = await fetch('YOUR_API_ENDPOINT', {
+      const response = await fetch('http://localhost:8080/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -32,18 +31,18 @@ const Contact = () => {
       if (!response.ok) {
         throw new Error('Failed to send message. Please try again later.');
       }
-      // If submission successful, reset form data and display success message
+      const result = await response.json();
       setFormData({
         name: '',
         email: '',
         message: ''
       });
       setErrorMessage('');
-      setSuccessMessage('Your message has been sent successfully!');
+      setSuccessMessage(result.message);
     } catch (error) {
       console.error('Error submitting message:', error);
-      // Set error message
       setErrorMessage(error.message);
+      setSuccessMessage('');  // Clear success message on error
     }
   };
 
