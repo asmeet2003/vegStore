@@ -1,0 +1,53 @@
+.sticky-logo-container {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .sticky-logo-container:hover {
+    transform: scale(1.1) translateY(-50%);
+  }
+  
+  .logo-circle {
+    position: relative;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  .chat-text {
+    position: absolute;
+    bottom: 0px; /* Adjusted for better alignment */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    font-size: 14px;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 6px 22px;
+    border-radius: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .logo-circle:hover .chat-text {
+    opacity: 1;
+  }
+  
