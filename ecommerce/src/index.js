@@ -14,7 +14,7 @@ import Signup from './page/Signup';
 import {store} from './redux/index';
 import {Provider} from 'react-redux';
 import Cart from './page/Cart';
-import OrderTracking from './page/OrderTracking';
+// import OrderTracking from './page/OrderTracking';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />} >
