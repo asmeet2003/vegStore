@@ -137,7 +137,7 @@ const Cart = () => {
   const handlePayment = async () => {
     if (user.email) {
       try {
-        const response = await fetch('http://localhost:8080/create-razorpay-order', {
+        const response = await fetch('https://vegistore.onrender.com/create-razorpay-order', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
